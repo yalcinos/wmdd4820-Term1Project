@@ -279,6 +279,9 @@ body, html {
  .gs-old-logo{
    display: inline;
  }
+p .gs-old-logo{
+   margin-left: 30px;
+ }
  
   
   
