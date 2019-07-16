@@ -1,3 +1,5 @@
+/**
+ * 
 var request = new Request('https://api-football-v1.p.rapidapi.com/v2/leagues/country/turkey/2018 ', {
 	headers: new Headers({
 		'Content-Type': 'text/plain',
@@ -31,4 +33,4 @@ fetch(request1)
 .catch(function(error) {
   console.log('Looks like there was a problem: \n', error);
 });
-
+ */
