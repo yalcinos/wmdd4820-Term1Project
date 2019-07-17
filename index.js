@@ -58,24 +58,27 @@ fetch(requestLiveScore)
     var li = document.createElement("li");
     var hr = document.createElement("hr");
     var span = document.createElement("span");
+    span.className = "match-date";
     li.className = "top-news__item";
     var homeTeam = document.createTextNode(responseAsJson.api.fixtures[i].homeTeam.team_name);
     var awayTeam = document.createTextNode(responseAsJson.api.fixtures[i].awayTeam.team_name);
     var homeScore = document.createTextNode(responseAsJson.api.fixtures[i].score.fulltime);
     var dateMatch = document.createTextNode(responseAsJson.api.fixtures[i].event_date);
+    //document.getElementsByClassName("match_date").innerHTML = responseAsJson.api.fixtures[i].event_date;
     //var getDate = responseAsJson.api.fixtures[i].event_date;
     //document.getElementsByTagName("span").innerHTML = getDate;
     //var getDate = document.createTextNode(dateMatch.toString().substr(0,11));
-    //console.log( getDate);
-    console.log(dateMatch);
-    
+    var garbageDate= dateMatch.splitText(10);
+    var remainDate = dateMatch;
+
     li.appendChild(homeTeam);
     li.appendChild(document.createTextNode(" "));
     li.appendChild(homeScore);
     li.appendChild(document.createTextNode(" "));
     li.appendChild(awayTeam);
-    li.appendChild(span.appendChild(dateMatch));
-    //li.appendChild(span);
+    //li.appendChild(span.appendChild(remainDate));
+    li.append(span);
+    span.appendChild(remainDate);
     ul.append(li);
     ul.append(hr);
   }
