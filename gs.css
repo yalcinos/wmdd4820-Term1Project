@@ -201,9 +201,9 @@ body, html {
   }
   
   .top-news__item {
-    padding:  1em 1em;
+    padding:  10px 10px;
     line-height: 19.2px;
-    font-size: 20px;
+    font-size: 15px;
   }
   
   
@@ -355,7 +355,7 @@ p .gs-old-logo{
       padding-right: 2px;
     }
     .top-news__item{
-      font-size: 15px;
+      font-size: 13px;
     }
    
   }
@@ -364,7 +364,7 @@ p .gs-old-logo{
       width: 50%;
     }
     .top-news__item{
-      font-size: 17px;
+      font-size: 14px;
     }
   }
   
