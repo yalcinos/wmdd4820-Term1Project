@@ -33,7 +33,8 @@ fetch(request1)
 .catch(function(error) {
   console.log('Looks like there was a problem: \n', error);
 });
- 
+ */
+
 var requestLiveScore = new Request('https://api-football-v1.p.rapidapi.com/v2/fixtures/team/645 ', {
 	headers: new Headers({
 		'Content-Type': 'text/plain',
@@ -51,25 +52,37 @@ fetch(requestLiveScore)
 .then(function(responseAsJson) {
   console.log(responseAsJson);
   var ul = document.getElementById("match-history");
-  for(let i=100 ; i<105; i++){
+
+  for (let i = 105 ; i < responseAsJson.api.fixtures.length; i++) {
+
     var li = document.createElement("li");
+    var hr = document.createElement("hr");
+    var span = document.createElement("span");
     li.className = "top-news__item";
     var homeTeam = document.createTextNode(responseAsJson.api.fixtures[i].homeTeam.team_name);
     var awayTeam = document.createTextNode(responseAsJson.api.fixtures[i].awayTeam.team_name);
-    var homeScore =document.createTextNode(responseAsJson.api.fixtures[i].score.fulltime);
-    //var result = document.createTextNode(homeTeam+ " " +homeScore+ " "+awayTeam);
+    var homeScore = document.createTextNode(responseAsJson.api.fixtures[i].score.fulltime);
+    var dateMatch = document.createTextNode(responseAsJson.api.fixtures[i].event_date);
+    //var getDate = responseAsJson.api.fixtures[i].event_date;
+    //document.getElementsByTagName("span").innerHTML = getDate;
+    //var getDate = document.createTextNode(dateMatch.toString().substr(0,11));
+    //console.log( getDate);
+    console.log(dateMatch);
+    
     li.appendChild(homeTeam);
     li.appendChild(document.createTextNode(" "));
     li.appendChild(homeScore);
     li.appendChild(document.createTextNode(" "));
     li.appendChild(awayTeam);
+    li.appendChild(span.appendChild(dateMatch));
+    //li.appendChild(span);
     ul.append(li);
+    ul.append(hr);
   }
     console.log(responseAsJson.api.fixtures[100].homeTeam.team_name);
   // Do stuff with the JSON
    
 })
-*/
 
 var slideIndex = 1;
 showSlides(slideIndex);

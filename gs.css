@@ -196,20 +196,16 @@ body, html {
   
   .news__title {
     font-weight: 300;
-    border-bottom: 1px solid #E0E0E0;
     line-height: 24px;
     font-size: 16px;
   }
   
   .top-news__item {
-    border-bottom: 1px solid #E0E0E0;
-    padding: 1em 0;
+    padding:  1em 1em;
     line-height: 19.2px;
+    font-size: 20px;
   }
   
-  .top-news__item:before {
-    content: "» ";
-  }
   
   .top-news__item:last-child {
     border-bottom: none;
@@ -358,11 +354,17 @@ p .gs-old-logo{
       padding-left: 2px;
       padding-right: 2px;
     }
+    .top-news__item{
+      font-size: 15px;
+    }
    
   }
   @media screen and (min-width: 600px){
     .top-news, .hero{
       width: 50%;
+    }
+    .top-news__item{
+      font-size: 17px;
     }
   }
   
