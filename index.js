@@ -33,7 +33,7 @@ fetch(request1)
 .catch(function(error) {
   console.log('Looks like there was a problem: \n', error);
 });
- */
+ 
 var requestLiveScore = new Request('https://api-football-v1.p.rapidapi.com/v2/fixtures/team/645 ', {
 	headers: new Headers({
 		'Content-Type': 'text/plain',
@@ -69,6 +69,7 @@ fetch(requestLiveScore)
   // Do stuff with the JSON
    
 })
+*/
 
 var slideIndex = 1;
 showSlides(slideIndex);
