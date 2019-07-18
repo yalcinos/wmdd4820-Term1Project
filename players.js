@@ -50,7 +50,8 @@ fetch(getPlayersData)
     var goals = document.createTextNode(PlayersArray[i].goals.total);
     var assists = document.createTextNode(PlayersArray[i].goals.assists);   
     var playedGames = document.createTextNode(PlayersArray[i].games.appearences); 
-    var nationality = document.createTextNode(PlayersArray[i].nationality); 
+    var nationality = document.createTextNode(PlayersArray[i].nationality)
+    var notDeclared = document.createTextNode("not declared"); 
     var tr = document.createElement("tr");
   
     //Store td elements.
@@ -71,10 +72,16 @@ fetch(getPlayersData)
        td[z] = document.createElement("td");
        tr.append(td[z]);
     }
-     
+     //BURADA KALINDI
     //Append every data to related td.
     for(let y=0; y<9; y++){
-      td[y].append(dataPlayer[y]);  
+      if(dataPlayer[y] === "null"){
+        console.log(dataPlayer[y]);
+        td[y].appendChild(notDeclared);
+      }
+      else {
+        td[y].append(dataPlayer[y]);
+      }
      }  
     table.append(tr);
   }
