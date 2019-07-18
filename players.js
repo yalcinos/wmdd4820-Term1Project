@@ -33,40 +33,52 @@ fetch(getPlayersData)
   for(let i= 0 ; i<responseAsJson.api.players.length; i++ ){
     if(responseAsJson.api.players[i].league === "Süper Lig"){
       PlayersArray.push(responseAsJson.api.players[i]);
-      
     }
   }
   return PlayersArray;
 }).then(function(PlayersArray){
   console.log("My New Players Array:" , PlayersArray);
-  //Loop for getting last 34 match.
-  /* for (let i = 0 ; i < responseAsJson.api.fixtures.length; i++) {
-    var table = document.getElementById("fixture.js");
-    var homeTeam = document.createTextNode(responseAsJson.api.players[i].homeTeam.team_name);
-    var awayTeam = document.createTextNode(responseAsJson.api.players[i].awayTeam.team_name);
-    var score = document.createTextNode(responseAsJson.api.players[i].score.fulltime); 
-    var status = document.createTextNode(responseAsJson.api.players[i].status); 
+  
+  //Loop for getting every players informations.
+   for (let i = 0 ; i < PlayersArray.length; i++) {
+    var table = document.getElementById("player-table");
+    var playerName = document.createTextNode(PlayersArray[i].player_name);
+    var position = document.createTextNode(PlayersArray[i].position);
+    var age = document.createTextNode(PlayersArray[i].age);
+    var height = document.createTextNode(PlayersArray[i].height);
+    var weight = document.createTextNode(PlayersArray[i].weight);
+    var goals = document.createTextNode(PlayersArray[i].goals.total);
+    var assists = document.createTextNode(PlayersArray[i].goals.assists);   
+    var playedGames = document.createTextNode(PlayersArray[i].games.appearences); 
+    var nationality = document.createTextNode(PlayersArray[i].nationality); 
     var tr = document.createElement("tr");
+  
     //Store td elements.
     var td = [];
-    //Store Api data
-    var dataFixture = [];
-    dataFixture.push(homeTeam);
-    dataFixture.push(score);
-    dataFixture.push(awayTeam);
-    dataFixture.push(status);
+    //Store Api Player Data in an array and append to the td as a child node.
+    var dataPlayer = [];
+    dataPlayer.push(playerName);
+    dataPlayer.push(position);
+    dataPlayer.push(age);
+    dataPlayer.push(height);
+    dataPlayer.push(weight);
+    dataPlayer.push(goals);
+    dataPlayer.push(assists);
+    dataPlayer.push(playedGames);
+    dataPlayer.push(nationality);
     //Create td element and add to array and add 4 td elements to tr.
-    for(let z = 0; z < 4; z++){
+    for(let z = 0; z < 9; z++){
        td[z] = document.createElement("td");
        tr.append(td[z]);
     }
+     
     //Append every data to related td.
-    for(let y=0; y<4; y++){
-      td[y].appendChild(dataFixture[y]);  
+    for(let y=0; y<9; y++){
+      td[y].append(dataPlayer[y]);  
      }  
     table.append(tr);
   }
- */
+ 
 });
  /*
  *
