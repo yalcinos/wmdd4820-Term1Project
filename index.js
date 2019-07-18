@@ -95,11 +95,6 @@ fetch(requestLiveScore)
  */
 
 
-
-
-
-
-
  /*
  *
  *Starts Gallery SlideShow Functionality
