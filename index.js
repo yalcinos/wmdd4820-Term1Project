@@ -35,6 +35,15 @@ fetch(request1)
 });
  */
 
+
+
+ /*
+ *
+ *
+ *Start Get Fixture of Galatasaray with FootBall-API 
+ * 
+ * 
+ */
 var requestLiveScore = new Request('https://api-football-v1.p.rapidapi.com/v2/fixtures/team/645 ', {
 	headers: new Headers({
 		'Content-Type': 'text/plain',
@@ -64,10 +73,6 @@ fetch(requestLiveScore)
     var awayTeam = document.createTextNode(responseAsJson.api.fixtures[i].awayTeam.team_name);
     var homeScore = document.createTextNode(responseAsJson.api.fixtures[i].score.fulltime);
     var dateMatch = document.createTextNode(responseAsJson.api.fixtures[i].event_date);
-    //document.getElementsByClassName("match_date").innerHTML = responseAsJson.api.fixtures[i].event_date;
-    //var getDate = responseAsJson.api.fixtures[i].event_date;
-    //document.getElementsByTagName("span").innerHTML = getDate;
-    //var getDate = document.createTextNode(dateMatch.toString().substr(0,11));
     var garbageDate= dateMatch.splitText(10);
     var remainDate = dateMatch;
 
@@ -82,11 +87,24 @@ fetch(requestLiveScore)
     ul.append(li);
     ul.append(hr);
   }
-    console.log(responseAsJson.api.fixtures[100].homeTeam.team_name);
-  // Do stuff with the JSON
-   
 })
+ /*
+ *
+ *End of Fixture Part
+ *  
+ */
 
+
+
+
+
+
+
+ /*
+ *
+ *Starts Gallery SlideShow Functionality
+ *  
+ */
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -113,3 +131,8 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+/*
+ *
+ *End of Gallery SlideShow Functionality
+ *  
+ */
