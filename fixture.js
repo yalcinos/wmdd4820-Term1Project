@@ -8,13 +8,13 @@
  * 
  * 
  */
-var requestLiveScore = new Request('https://api-football-v1.p.rapidapi.com/v2/fixtures/team/645 ', {
+var getAllFixtureData = new Request('https://api-football-v1.p.rapidapi.com/v2/fixtures/team/645 ', {
 	headers: new Headers({
 		'Content-Type': 'text/plain',
         'X-RapidAPI-Key':'dc03adc6e7mshf1c57d344b8843ep16cc1fjsnca50c7807d33'
 	})
 });
-fetch(requestLiveScore)
+fetch(getAllFixtureData)
   .then(function(response) {
     if (!response.ok) {
     throw Error(response.statusText);
@@ -24,8 +24,34 @@ fetch(requestLiveScore)
 })
 .then(function(responseAsJson) {
   console.log(responseAsJson);
+  //Loop for getting last 34 match.
+  for (let i = 75 ; i < responseAsJson.api.fixtures.length; i++) {
+    var table = document.getElementById("fixture-tr");
+    var homeTeam = document.createTextNode(responseAsJson.api.fixtures[i].homeTeam.team_name);
+    var awayTeam = document.createTextNode(responseAsJson.api.fixtures[i].awayTeam.team_name);
+    var score = document.createTextNode(responseAsJson.api.fixtures[i].score.fulltime); 
+    var status = document.createTextNode(responseAsJson.api.fixtures[i].status); 
+    var tr = document.createElement("tr");
+    //Store td elements.
+    var td = [];
+    //Store Api data
+    var dataFixture = [];
+    dataFixture.push(homeTeam);
+    dataFixture.push(score);
+    dataFixture.push(awayTeam);
+    dataFixture.push(status);
+    //Create td element and add to array and add 4 td elements to tr.
+    for(let z = 0; z < 4; z++){
+       td[z] = document.createElement("td");
+       tr.append(td[z]);
+    }
+    //Append every data to related td.
+    for(let y=0; y<4; y++){
+      td[y].appendChild(dataFixture[y]);  
+     }  
+    table.append(tr);
+  }
  
-  
 });
  /*
  *
@@ -33,12 +59,7 @@ fetch(requestLiveScore)
  *  
  */
 
-
-
-
-
-
-
+ 
  /*
  *
  *Starts Gallery SlideShow Functionality
