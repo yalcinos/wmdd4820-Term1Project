@@ -1,10 +1,8 @@
 
-
-
  /*
  *
  *
- *Start Get Fixture of Galatasaray with FootBall-API 
+ *Start Get Player Informations of Galatasaray with FootBall-API 
  * 
  * 
  */
@@ -41,6 +39,7 @@ fetch(getPlayersData)
   
   //Loop for getting every players informations.
    for (let i = 0 ; i < PlayersArray.length; i++) {
+
     var table = document.getElementById("player-table");
     var playerName = document.createTextNode(PlayersArray[i].player_name);
     var position = document.createTextNode(PlayersArray[i].position);
@@ -51,7 +50,7 @@ fetch(getPlayersData)
     var assists = document.createTextNode(PlayersArray[i].goals.assists);   
     var playedGames = document.createTextNode(PlayersArray[i].games.appearences); 
     var nationality = document.createTextNode(PlayersArray[i].nationality)
-    var notDeclared = document.createTextNode("not declared"); 
+    var notDeclared = "Not Declared";
     var tr = document.createElement("tr");
   
     //Store td elements.
@@ -74,15 +73,19 @@ fetch(getPlayersData)
     }
      //BURADA KALINDI
     //Append every data to related td.
+    
     for(let y=0; y<9; y++){
-      if(dataPlayer[y] === "null"){
-        console.log(dataPlayer[y]);
-        td[y].appendChild(notDeclared);
+      //Check if there is null elements on the dataplayer array assign not declared value.
+      if(dataPlayer[y].wholeText === "null"){
+        
+        td[y].innerHTML = notDeclared;
       }
       else {
+        
         td[y].append(dataPlayer[y]);
       }
      }  
+    
     table.append(tr);
   }
  
