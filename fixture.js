@@ -31,6 +31,20 @@ fetch(getAllFixtureData)
     var awayTeam = document.createTextNode(responseAsJson.api.fixtures[i].awayTeam.team_name);
     var score = document.createTextNode(responseAsJson.api.fixtures[i].score.fulltime); 
     var status = document.createTextNode(responseAsJson.api.fixtures[i].status); 
+    var imgHome = document.createElement('img');
+    var imgAway = document.createElement('img');
+    imgHome.style.width = "30px";
+    imgHome.style.cssFloat = "left";
+    imgAway.style.width = "30px";
+    imgAway.style.cssFloat = "left";
+    imgHome.className = "home-logo";
+    imgAway.className = "away-logo";
+    imgHome.src= responseAsJson.api.fixtures[i].homeTeam.logo;
+    imgAway.src = responseAsJson.api.fixtures[i].awayTeam.logo;
+  
+  
+
+  
     var tr = document.createElement("tr");
     //Store td elements.
     var td = [];
@@ -40,6 +54,8 @@ fetch(getAllFixtureData)
     dataFixture.push(score);
     dataFixture.push(awayTeam);
     dataFixture.push(status);
+    dataFixture.push(imgHome);
+    dataFixture.push(imgAway);
     //Create td element and add to array and add 4 td elements to tr.
     for(let z = 0; z < 4; z++){
        td[z] = document.createElement("td");
@@ -48,8 +64,11 @@ fetch(getAllFixtureData)
     //Append every data to related td.
     for(let y=0; y<4; y++){
       td[y].appendChild(dataFixture[y]);  
-     }  
+     }
+     td[0].append(dataFixture[4]);  
+     td[2].append(dataFixture[5]); 
     table.append(tr);
+    
   }
  
 });
