@@ -58,27 +58,35 @@ fetch(requestLiveScore)
   // Read the response as json.
   return response.json();
 })
-.then(function(responseAsJson) {
-  console.log(responseAsJson);
+.then(function(responseAPI) {
+  console.log(responseAPI);
+  //Get Last 5 Elements in arrat Because the api so dynamic every day there is an update , so array expands by daily.
+  var responseAsJson = responseAPI.api.fixtures.slice(Math.max(responseAPI.api.fixtures.length-5));
+  //console.log("Sliced Array:" + responseAsJson);
   var ul = document.getElementById("match-history");
 
-  for (let i = 105 ; i < responseAsJson.api.fixtures.length; i++) {
-
+  for (let i = 0 ; i < responseAsJson.length; i++) {
     var li = document.createElement("li");
     var hr = document.createElement("hr");
     var span = document.createElement("span");
     span.className = "match-date";
     li.className = "top-news__item";
-    var homeTeam = document.createTextNode(responseAsJson.api.fixtures[i].homeTeam.team_name);
-    var awayTeam = document.createTextNode(responseAsJson.api.fixtures[i].awayTeam.team_name);
-    var homeScore = document.createTextNode(responseAsJson.api.fixtures[i].score.fulltime);
-    var dateMatch = document.createTextNode(responseAsJson.api.fixtures[i].event_date);
+    var homeTeam = document.createTextNode(responseAsJson[i].homeTeam.team_name);
+    var awayTeam = document.createTextNode(responseAsJson[i].awayTeam.team_name);
+    var homeScore = document.createTextNode(responseAsJson[i].score.fulltime);
+    var dateMatch = document.createTextNode(responseAsJson[i].event_date);
     var garbageDate= dateMatch.splitText(10);
     var remainDate = dateMatch;
+    //The new fixture was published , so the matches hasn't start yet. The score was null. I change the null to 0-0
+    var nullScore = "0-0";
+    if(homeScore.wholeText === "null"){
+        
+      homeScore = nullScore;
+    }
 
     li.appendChild(homeTeam);
     li.appendChild(document.createTextNode(" "));
-    li.appendChild(homeScore);
+    li.append(homeScore);
     li.appendChild(document.createTextNode(" "));
     li.appendChild(awayTeam);
     //li.appendChild(span.appendChild(remainDate));
