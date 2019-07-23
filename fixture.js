@@ -33,6 +33,7 @@ fetch(getAllFixtureData)
     var status = document.createTextNode(responseAsJson.api.fixtures[i].status); 
     var imgHome = document.createElement('img');
     var imgAway = document.createElement('img');
+    var nullScore = "0-0";
     imgHome.style.width = "30px";
     imgHome.style.cssFloat = "left";
     imgAway.style.width = "30px";
@@ -41,7 +42,10 @@ fetch(getAllFixtureData)
     imgAway.className = "away-logo";
     imgHome.src= responseAsJson.api.fixtures[i].homeTeam.logo;
     imgAway.src = responseAsJson.api.fixtures[i].awayTeam.logo;
-  
+    if(score.wholeText === "null"){
+        
+      score = nullScore;
+    }
   
 
   
@@ -63,7 +67,7 @@ fetch(getAllFixtureData)
     }
     //Append every data to related td.
     for(let y=0; y<4; y++){
-      td[y].appendChild(dataFixture[y]);  
+      td[y].append(dataFixture[y]);  
      }
      td[0].append(dataFixture[4]);  
      td[2].append(dataFixture[5]); 
