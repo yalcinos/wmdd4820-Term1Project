@@ -5,13 +5,13 @@
  * 
  * 
  */
-var getAllFixtureData = new Request('https://api-football-v1.p.rapidapi.com/v2/transfers/team/645 ', {
+var getStandings = new Request('https://api-football-v1.p.rapidapi.com/v2/leagueTable/114 ', {
 	headers: new Headers({
 		'Content-Type': 'text/plain',
         'X-RapidAPI-Key':'dc03adc6e7mshf1c57d344b8843ep16cc1fjsnca50c7807d33'
 	})
 });
-fetch(getAllFixtureData)
+fetch(getStandings)
   .then(function(response) {
     if (!response.ok) {
     throw Error(response.statusText);
@@ -21,8 +21,28 @@ fetch(getAllFixtureData)
 })
 .then(function(responseAsJson) {
   console.log(responseAsJson);
+  console.log(responseAsJson.api.standings[0][0].all);
 
- 
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var chart = document.getElementById('myChart');
+  var doughnutChart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'doughnut',
+
+    // The data for our dataset
+    data: {
+        labels: Object.keys(responseAsJson.api.standings[0][0].home),       
+        datasets: [{
+            backgroundColor: ['rgb(139,0,0)','rgb(0,128,0)','rgb(0,0,205)','rgb(255,0,0)','rgb(255,218,185)','rgb(47,79,79)'],
+            borderColor: 'rgb(0, 0, 0)',
+            data: Object.values(responseAsJson.api.standings[0][0].home)
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+
 });
  /*
  *
@@ -30,24 +50,5 @@ fetch(getAllFixtureData)
  *  
  */
 
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
 
 
