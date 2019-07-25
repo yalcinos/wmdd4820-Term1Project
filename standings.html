@@ -5,10 +5,11 @@
     <title>Galatasaray SK Fan Page</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="gs.css">
+    <script type="text/javascript" src="standings.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     
 </head>
-<body>
+<body onload="onLoadFetch()">
 
         <header class="header">
           <div class="header__inner">
@@ -32,7 +33,7 @@
     
         <main>
             <section class="content">
-                <select id="combobox-team">
+                <select id="combobox-team" onchange="changeDataByTeam()">
                     
                   </select>
                     
@@ -59,7 +60,7 @@
             </ul>
           </footer>
         </main>
-        <script type="text/javascript" src="standings.js"></script>
+        
         
       </body>
 </html>
