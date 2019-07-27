@@ -73,11 +73,11 @@ function changeDataByTeam(){
     var chart1 = document.getElementById('myChart');
     chart1.style.display='block';
     
-    if(doughnutChart != undefined){
-      doughnutChart.destroy();
+    if(window.doughnut != undefined){
+      window.doughnut.destroy();
     }
       
-    var doughnutChart = new Chart(ctx, {
+    window.doughnut = new Chart(ctx, {
       // The type of chart we want to create
       type: 'doughnut',
   
@@ -101,7 +101,11 @@ function changeDataByTeam(){
   //Away Statistic
   var awayChart = document.getElementById('myChart1').getContext('2d');
   var chart2= document.getElementById('myChart1');
-  var doughnutChart1 = new Chart(awayChart, {
+
+  if(window.doughnutaway != undefined){
+    window.doughnutaway.destroy();
+  }
+   window.doughnutaway = new Chart(awayChart, {
     // The type of chart we want to create
     type: 'doughnut',
   
@@ -122,6 +126,9 @@ function changeDataByTeam(){
     
   });
   
+ }
+ function onLoadFetchGraph(){
+   
  }
 
 
