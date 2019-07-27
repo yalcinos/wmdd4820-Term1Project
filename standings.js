@@ -72,7 +72,7 @@ function changeDataByTeam(){
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart1 = document.getElementById('myChart');
     chart1.style.display='block';
-    
+    //Below code prevents to destroy old graph, otherwise when choose  teams from dropbox, graph is not overwrited and shows every team data.
     if(window.doughnut != undefined){
       window.doughnut.destroy();
     }
@@ -128,7 +128,7 @@ function changeDataByTeam(){
   
  }
  function onLoadFetchGraph(){
-   
+
  }
 
 
