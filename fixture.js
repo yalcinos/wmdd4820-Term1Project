@@ -81,5 +81,3 @@ fetch(getAllFixtureData)
  *End of Fixture Part
  *  
  */
-
-

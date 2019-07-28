@@ -61,13 +61,14 @@ fetch(requestLiveScore)
 .then(function(responseAPI) {
   console.log(responseAPI);
   //Get Last 5 Elements in arrat Because the api so dynamic every day there is an update , so array expands by daily.
-  var responseAsJson = responseAPI.api.fixtures.slice(Math.max(responseAPI.api.fixtures.length-5));
+  var responseAsJson = responseAPI.api.fixtures.slice(responseAPI.api.fixtures.length-5);
   //console.log("Sliced Array:" + responseAsJson);
   var ul = document.getElementById("match-history");
 
   for (let i = 0 ; i < responseAsJson.length; i++) {
     var li = document.createElement("li");
     var hr = document.createElement("hr");
+  
     var span = document.createElement("span");
     span.className = "match-date";
     li.className = "top-news__item";
@@ -139,3 +140,4 @@ function showSlides(n) {
  *End of Gallery SlideShow Functionality
  *  
  */
+

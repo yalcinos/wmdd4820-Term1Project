@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="gs.css">
     
 </head>
-<body>
+<body onload="scrollDownPage()">
 
         <header class="header">
           <div class="header__inner">
@@ -25,50 +25,18 @@
               <li class="nav__item"><a href="players.html">Players</a></li>
               <li class="nav__item"><a href="transfers.html">Transfers</a></li>
               <li class="nav__item"><a href="standings.html">Standings</a></li>
-              <li class="nav__item"><a href="contact.html">Contact</a></li>
+              <li class="nav__item"><a href="videos.html">Video</a></li>
             
         </nav>
     
         <main>
-            <section class="content">
-                <table>
-                    <tr>
-                      <th>Company</th>
-                      <th>Contact</th>
-                      <th>Country</th>
-                    </tr>
-                    <tr>
-                      <td>Alfreds Futterkiste</td>
-                      <td>Maria Anders</td>
-                      <td>Germany</td>
-                    </tr>
-                    <tr>
-                      <td>Centro comercial Moctezuma</td>
-                      <td>Francisco Chang</td>
-                      <td>Mexico</td>
-                    </tr>
-                    <tr>
-                      <td>Ernst Handel</td>
-                      <td>Roland Mendel</td>
-                      <td>Austria</td>
-                    </tr>
-                    <tr>
-                      <td>Island Trading</td>
-                      <td>Helen Bennett</td>
-                      <td>UK</td>
-                    </tr>
-                    <tr>
-                      <td>Laughing Bacchus Winecellars</td>
-                      <td>Yoshi Tannamuri</td>
-                      <td>Canada</td>
-                    </tr>
-                    <tr>
-                      <td>Magazzini Alimentari Riuniti</td>
-                      <td>Giovanni Rovelli</td>
-                      <td>Italy</td>
-                    </tr>
-                  </table>
-            </section>
+            <div class="g-ytsubscribe" data-channel="2galatasaray" data-layout="full" data-theme="dark" data-count="default"></div>
+              <div class="youtube-video">
+                <div id="player">
+                </div>
+                <div id="player2">
+                </div>
+            </div>
           <footer>
             <ul>
               <li><a href="#">Contact us</a></li>
@@ -77,6 +45,7 @@
             </ul>
           </footer>
         </main>
-        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="videos.js"></script>
+        <script src="https://apis.google.com/js/platform.js"></script>
       </body>
 </html>

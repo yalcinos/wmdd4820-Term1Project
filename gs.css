@@ -529,3 +529,21 @@ tr:nth-child(odd) {
 .grid-items{
   width: 500px;
 }
+.youtube-video{
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; height: 0; overflow: hidden;
+  margin-left: auto;
+  margin-right: auto; 
+}
+.youtube-video iframe,
+.youtube-video object,
+.youtube-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98%;
+  height: 90%;
+  padding-top: 10px;
+  padding-left: 15px;
+}
