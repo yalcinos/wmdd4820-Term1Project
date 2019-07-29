@@ -41,7 +41,7 @@ fetch(getAllFixtureData)
     for(let z = 0; z < 4; z++){
        td[z] = document.createElement("td");
       //Append every data to related td.
-       td[Z].append(dataTransfer[Z]); 
+       td[z].append(dataTransfer[z]); 
        tr.append(td[z]);
     }
     table.append(tr);

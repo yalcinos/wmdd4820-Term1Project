@@ -1,7 +1,5 @@
 
-
-
- /*
+/*
  *
  *
  *Start Get Fixture of Galatasaray with FootBall-API 
@@ -40,7 +38,7 @@ fetch(getAllFixtureData)
     imgAway.style.cssFloat = "left";
     imgHome.className = "home-logo";
     imgAway.className = "away-logo";
-    imgHome.src= responseAsJson.api.fixtures[i].homeTeam.logo;
+    imgHome.src = responseAsJson.api.fixtures[i].homeTeam.logo;
     imgAway.src = responseAsJson.api.fixtures[i].awayTeam.logo;
     if(score.wholeText === "null"){
         
@@ -69,7 +67,7 @@ fetch(getAllFixtureData)
     }
      td[0].append(dataFixture[4]);  
      td[2].append(dataFixture[5]); 
-     table.append(tr);
+     table.append(tr);  
     
   }
  
