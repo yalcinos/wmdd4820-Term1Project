@@ -70,22 +70,17 @@ fetch(getPlayersData)
     for(let z = 0; z < 9; z++){
        td[z] = document.createElement("td");
        tr.append(td[z]);
-    }
-     //BURADA KALINDI
-    //Append every data to related td.
-    
-    for(let y=0; y<9; y++){
-      //Check if there is null elements on the dataplayer array assign not declared value.
-      if(dataPlayer[y].wholeText === "null"){
+       //Check if there is null elements on the dataplayer array assign not declared value.
+       if(dataPlayer[z].wholeText === "null"){
         
-        td[y].innerHTML = notDeclared;
+        td[z].innerHTML = notDeclared;
       }
       else {
-        
-        td[y].append(dataPlayer[y]);
+        //Append every data to related td.
+        td[z].append(dataPlayer[z]);
       }
-     }  
-    
+    }
+   
     table.append(tr);
   }
  

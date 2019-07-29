@@ -30,7 +30,7 @@ fetch(getStandings)
     let cmbbox = document.getElementById("combobox-team");
     let optionitem = document.createElement("option");
     optionitem.innerHTML = responseAsJson.api.standings[0][i].teamName;
-    optionitem.value = responseAsJson.api.standings[0][i].teamName;
+    //optionitem.value = responseAsJson.api.standings[0][i].teamName;
     cmbbox.appendChild(optionitem);
   }
     return responseAsJson;

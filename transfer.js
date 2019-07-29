@@ -37,15 +37,13 @@ fetch(getAllFixtureData)
     dataTransfer.push(teamOut);
     dataTransfer.push(teamIn);
     dataTransfer.push(transferDate);
-    //Create td element and add to array and add 4 td elements to tr.
+    //Create td element and add to array ,add 4 td elements to tr.
     for(let z = 0; z < 4; z++){
        td[z] = document.createElement("td");
+      //Append every data to related td.
+       td[Z].append(dataTransfer[Z]); 
        tr.append(td[z]);
     }
-    //Append every data to related td.
-    for(let y=0; y<4; y++){
-      td[y].append(dataTransfer[y]);  
-     }
     table.append(tr);
     
   }

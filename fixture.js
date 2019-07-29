@@ -63,15 +63,13 @@ fetch(getAllFixtureData)
     //Create td element and add to array and add 4 td elements to tr.
     for(let z = 0; z < 4; z++){
        td[z] = document.createElement("td");
+       //Append every data to related td.
+       td[z].append(dataFixture[z]); 
        tr.append(td[z]);
     }
-    //Append every data to related td.
-    for(let y=0; y<4; y++){
-      td[y].append(dataFixture[y]);  
-     }
      td[0].append(dataFixture[4]);  
      td[2].append(dataFixture[5]); 
-    table.append(tr);
+     table.append(tr);
     
   }
  
