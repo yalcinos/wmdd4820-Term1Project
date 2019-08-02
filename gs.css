@@ -582,3 +582,13 @@ tr:nth-child(odd) {
   padding-top: 10px;
   padding-left: 15px;
 }
+/*
+* Survey Part
+*
+*/
+#question1{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 25px;
+  width: 50%;
+}
