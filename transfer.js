@@ -55,4 +55,19 @@ fetch(getAllFixtureData)
  *  
  */
 
+var getLiveData = new Request('https://api-football-v1.p.rapidapi.com/v2/fixtures/live/114-115-110 ', {
+	headers: new Headers({
+		'Content-Type': 'text/plain',
+        'X-RapidAPI-Key':'dc03adc6e7mshf1c57d344b8843ep16cc1fjsnca50c7807d33'
+	})
+});
+fetch(getLiveData)
+  .then(function(response) {
+    if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  // Read the response as json.
+  console.log(response);
+  return response.json();
+})
 

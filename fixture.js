@@ -70,8 +70,8 @@ fetch(getAllFixtureData)
      table.append(tr);  
     
   }
- 
-});
+    return responseAsJson;
+}).then((getGoals) => generateColorByWinLose(getGoals));
  /*
  *
  *End of Fixture Part
