@@ -42,8 +42,8 @@ function fetchDataToComboBox(){
   
     //Assign values to the combobox
     for(let i = 0 ; i<responseAsJson.api.standings[0].length; i++){
-      let cmbbox = document.getElementById("team-combo");
-      let optionitem = document.createElement("option");
+      var cmbbox = document.getElementById("team-combo");
+      var optionitem = document.createElement("option");
       optionitem.innerHTML = responseAsJson.api.standings[0][i].teamName;
       cmbbox.appendChild(optionitem);
     }    

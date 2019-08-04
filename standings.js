@@ -24,8 +24,8 @@ fetch(getStandings)
 .then(function(responseAsJson) {
   //Assign values to the combobox
   for(let i = 0 ; i<responseAsJson.api.standings[0].length; i++){
-    let cmbbox = document.getElementById("combobox-team");
-    let optionitem = document.createElement("option");
+    var cmbbox = document.getElementById("combobox-team");
+    var optionitem = document.createElement("option");
     optionitem.innerHTML = responseAsJson.api.standings[0][i].teamName;
     cmbbox.appendChild(optionitem);
   }
@@ -64,7 +64,7 @@ function changeDataByTeam(){
  function getDataByTeam(event){
      //Assign values to the combobox
   
-    let cmbboxIndex = document.getElementById("combobox-team").selectedIndex;
+    var cmbboxIndex = document.getElementById("combobox-team").selectedIndex;
     console.log(cmbboxIndex);
     console.log(event.api.standings[0][0].home);
     var ctx = document.getElementById('myChart').getContext('2d');
