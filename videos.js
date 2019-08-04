@@ -49,6 +49,7 @@ var tag = document.createElement('script');
       function stopVideo() {
         player.stopVideo();
       }
+      //This function helps to scroll down 250 to achieve centered position . (See line 10 at videos.html)
     function scrollDownPage(){
          //Youtube video is centered with below code.
           window.scrollTo(0,250);

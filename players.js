@@ -53,7 +53,7 @@ fetch(getPlayersData)
     var notDeclared = "Not Declared";
     var tr = document.createElement("tr");
   
-    //Store td elements.
+    //Store td elements in td array.
     var td = [];
     //Store Api Player Data in an array and append to the td as a child node.
     var dataPlayer = [];
@@ -66,7 +66,7 @@ fetch(getPlayersData)
     dataPlayer.push(assists);
     dataPlayer.push(playedGames);
     dataPlayer.push(nationality);
-    //Create td element and add to array and add 4 td elements to tr.
+    //In for loop , create td element and add to array and add 4 td elements selector to tr.
     for(let z = 0; z < 9; z++){
        td[z] = document.createElement("td");
        tr.append(td[z]);

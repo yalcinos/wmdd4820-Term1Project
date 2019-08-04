@@ -2,7 +2,7 @@
  *
  *
  *Start Get Fixture of Galatasaray with FootBall-API 
- * 
+ * Fetch API Daya
  * 
  */
 var requestLiveScore = new Request('https://api-football-v1.p.rapidapi.com/v2/fixtures/team/645 ', {
@@ -25,7 +25,7 @@ fetch(requestLiveScore)
   var responseAsJson = responseAPI.api.fixtures.slice(responseAPI.api.fixtures.length-5);
   //console.log("Sliced Array:" + responseAsJson);
   var ul = document.getElementById("match-history");
-
+  //This for loop helps to create list. 
   for (let i = 0 ; i < responseAsJson.length; i++) {
     var li = document.createElement("li");
     var hr = document.createElement("hr");
@@ -37,6 +37,7 @@ fetch(requestLiveScore)
     var awayTeam = document.createTextNode(responseAsJson[i].awayTeam.team_name);
     var homeScore = document.createTextNode(responseAsJson[i].score.fulltime);
     var dateMatch = document.createTextNode(responseAsJson[i].event_date);
+    //split text helps to cut ugly data format which comes from API.
     var garbageDate= dateMatch.splitText(10);
     var remainDate = dateMatch;
     //The new fixture was published , so the matches hasn't start yet. The score was null. I change the null to 0-0

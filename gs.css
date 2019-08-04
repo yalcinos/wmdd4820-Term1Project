@@ -22,7 +22,21 @@ body, html {
     box-sizing: border-box;
   }
   
+  .history{
+    clear: both;
+    margin: 24px 0;
+    
+  }
+  .history p {
+    font-size: 17px;
+
+  }
   
+  .history_title{
+    font-weight: 500;
+    font-size: 2em;
+  
+  }
   ul {
     list-style: none;
     padding: 0;
@@ -70,6 +84,7 @@ body, html {
     vertical-align: top;
     margin-top: 12px;
     margin-left: 20px;
+    margin-bottom: 12px;
   }
   
   .header__title {
@@ -100,15 +115,16 @@ body, html {
     margin: 0;
     
   }
+  /* Add hover to background of list elements */
   .nav__list li:hover {
     background-color: #702525;
     -webkit-transition: background-color 1s  ease-out;
   }
-  
+  /* Style of navigation items unordered list */
   .nav__item {
     box-sizing: border-box;
     display: inline-block;
-    width: 14%;
+    width: 13%;
     text-align: center;
     line-height: 24px;
     padding: 24px;
@@ -120,7 +136,7 @@ body, html {
     color: #E0E0E0;
     padding: 1.5em;
   }
-  
+  /* Add hover properties every links of navigation bar. */
   .nav a:hover {
     text-decoration: underline;
     color: #E0E0E0;
@@ -129,7 +145,7 @@ body, html {
   
   /*
    *
-   * Main
+   * Style of Main Selector
    *
    */
   
@@ -143,7 +159,7 @@ body, html {
   
   /*
    *
-   * Content
+   * Style of Section Selector
    *
    */
   .content{
@@ -161,20 +177,19 @@ body, html {
   
   /*
    *
-   * Hero
+   * Style of Sub sections
    *
    */
   
-  .hero {
+  .subcontent {
     float: left;
     width: 100%;
     position: relative;
-    background-image: url("./images/dog.jpg");
     background-size: cover;
     height: 300px;
   }
   
-  .hero article {
+  .subcontent article {
     box-sizing: border-box;
     background-color: #000;
     background-color: rgba(0, 0, 0, 0.7);
@@ -189,7 +204,7 @@ body, html {
   
   /*
    *
-   * Top News
+   * Upcoming Match Section
    *
    */
   
@@ -224,96 +239,18 @@ body, html {
     padding: 1.5em;
   }
   
-  .top-news__item a:hover,
-  .top-news__item a:active {
-    text-decoration: underline;
-  }
+
   
-  
-  /*
-   *
-   * Sport Scores
-   *
-   */
-  
-  .scores {
-    width: 100%;
-    float: left;
-    padding-top: 1em;
-  }
-  
-  .scores__table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .scores__table th,
-  .scores__table td {
-    padding: 1em; 
-  }
-  
-  .scores__table th {
-    color: #fff;
-    font-weight: 300;
-    background-color: #78909C;
-  }
-  
-  .scores__table tr:nth-child(odd) td {
-    background-color: #fff;
-  }
-  
-  .scores__table tr:nth-child(even) td {
-    background-color: #eceff1;
-  }
-  
-  .scores__table td.winner {
-    font-weight: bold;
-  }
-  
-  .scores__table td:nth-child(3) {
-    text-align: right;
-  }
-  
-  .scores__table td:nth-child(2),
-  .scores__table td:nth-child(5) {
-    text-align: center;
-  }
+ 
   
  .gs-old-logo{
    display: inline;
+   
  }
 p .gs-old-logo{
    margin-left: 30px;
+   
  }
- 
-  
-  
-  /*
-   *
-   * Weather
-   *
-   */
-  
-  .recent-news {
-    clear: both;
-    padding: 1em;
-  }
-  
-  .history {
-    clear: both;
-    margin: 24px 0;
-  }
- 
-  .history_title {
-    font-weight: 500;
-    font-size: 2em;
-  }
-  
-  .history p {
-    font-size: 17px;
-  }
-  
-  
   
   /*
    *
@@ -340,15 +277,14 @@ p .gs-old-logo{
   p span{
     display: block;
   }
-  #truncate{
-    height:3.6em;
-  }
   .match-date{
     float: right;
   }
+
+  /*Media Quaries for small device*/
   @media screen and (max-width: 540px) {
     .header__title{
-      font-size: 30px;
+      font-size: 2.5em;
     }
     .nav{
       width: 100%;
@@ -372,8 +308,10 @@ p .gs-old-logo{
       grid-column-start: 1;
     }
   }
+
+  /* Media quaries for tablet pc and pc */
   @media screen and (min-width: 600px){
-    .top-news, .hero{
+    .top-news, .subcontent{
       width: 50%;
     }
     .top-news__item{
@@ -381,14 +319,27 @@ p .gs-old-logo{
     }
     
   }
+  /* Media quaries for tablet and phones */
+
   @media screen and (max-width: 800px){
     .grid-items{
       grid-column-start: 2;
       padding: 1em;
-        }
+      }
+      .header__title{
+        font-size: 2.5em;
+      }
+  }  
+  /* Specific queries for main page at index.html to give order properties */
+  @media screen and (min-width:600px) and(max-width: 800px){
+    .grid-items{
+      grid-column-start: 2;
+      padding: 1em;
+      }
   }
+  /* Quaries for tablet and pc at Index html*/
   @media screen and (min-width: 800px) {
-    .scores, .weather{
+    .scores{
       width: 50%;
     }
     .content1{
@@ -412,7 +363,7 @@ p .gs-old-logo{
       margin-left: auto;
       margin-right: auto;
     }
-    .content1{
+    .content1{ 
       width: 1000px;
       margin-left: auto;
       margin-right: auto;
@@ -430,9 +381,35 @@ p .gs-old-logo{
       font-size:1.30em;
     }
   }
+
+/*
+   *
+   *  Some Alignment of history page
+   *
+   */
+  
+   .recent-news {
+    clear: both;
+    padding: 1em;
+  }
+  
+  .history {
+    clear: both;
+    margin: 24px 0;
+  }
+ 
+  .history_title {
+    font-weight: 500;
+    font-size: 2em;
+  }
+  
+  .history p {
+    font-size: 17px;
+  }
+
   /** SlideShow */
   
-  .mySlides {display: none}
+.mySlides {display: none}
 img {vertical-align: middle;}
 
 /* Slideshow container */
@@ -568,6 +545,8 @@ tr:nth-child(odd) {
 .grid-items{
   width: 500px;
 }
+
+/*Youtube Video Style*/
 .youtube-video{
   position: relative;
   padding-bottom: 56.25%;
@@ -599,7 +578,7 @@ tr:nth-child(odd) {
   font-size: 25px;
   width: 100%;
 }
-
+/* Contact form style */
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
@@ -610,4 +589,6 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
+
+
 

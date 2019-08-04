@@ -3,7 +3,7 @@
  *
  *
  *Start Get Fixture of Galatasaray with FootBall-API 
- * 
+ * Fetch Data
  * 
  */
 var getAllFixtureData = new Request('https://api-football-v1.p.rapidapi.com/v2/fixtures/team/645 ', {
@@ -44,13 +44,10 @@ fetch(getAllFixtureData)
         
       score = nullScore;
     }
-  
-
-  
     var tr = document.createElement("tr");
     //Store td elements.
     var td = [];
-    //Store Api data
+    //Store Api data within an array
     var dataFixture = [];
     dataFixture.push(homeTeam);
     dataFixture.push(score);
@@ -71,7 +68,7 @@ fetch(getAllFixtureData)
     
   }
     return responseAsJson;
-}).then((getGoals) => generateColorByWinLose(getGoals));
+});
  /*
  *
  *End of Fixture Part

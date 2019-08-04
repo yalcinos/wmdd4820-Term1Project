@@ -2,7 +2,7 @@
  *
  *
  * Get Transfer of Galatasaray with FootBall-API 
- * 
+ * onLoadFetch function will work DOM is created compeletely to get data from API and push to the combobox
  * 
  */
 function onLoadFetch(){
@@ -22,15 +22,11 @@ fetch(getStandings)
   return response.json();
 })
 .then(function(responseAsJson) {
-  console.log(responseAsJson);
-  console.log(responseAsJson.api.standings[0][0].all);
-
   //Assign values to the combobox
   for(let i = 0 ; i<responseAsJson.api.standings[0].length; i++){
     let cmbbox = document.getElementById("combobox-team");
     let optionitem = document.createElement("option");
     optionitem.innerHTML = responseAsJson.api.standings[0][i].teamName;
-    //optionitem.value = responseAsJson.api.standings[0][i].teamName;
     cmbbox.appendChild(optionitem);
   }
     return responseAsJson;
@@ -40,7 +36,8 @@ fetch(getStandings)
  /*
  *
  *End of Transfer Part
- *  
+ * This function will call when user select an item from combobox (see line 35 at standings.html)
+ * This function call to getDataByTeam function to get data from api to but chart js.
  */
 function changeDataByTeam(){
 
@@ -99,7 +96,7 @@ function changeDataByTeam(){
   });
   
   
-  //Away Statistic
+  //This Chart create for showing AWAY Statisctics.
   var awayChart = document.getElementById('myChart1').getContext('2d');
   var chart2= document.getElementById('myChart1');
 
@@ -128,14 +125,14 @@ function changeDataByTeam(){
   });
     return event;
  }
+
+ //This function Helps to load default graph when page load first time which i choosed Galatasaray information to defaukt
  function onLoadFetchFirstTeamData(event){
 
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart1 = document.getElementById('myChart');
     chart1.style.display='block';
-    //Below code prevents to destroy old graph, otherwise when choose  teams from dropbox, graph is not overwrited and shows every team data.
- 
-    
+  
     window.doughnut = new Chart(ctx, {
     // The type of chart we want to create
     type: 'doughnut',
@@ -160,7 +157,7 @@ function changeDataByTeam(){
     //Away Statistic
   var awayChart = document.getElementById('myChart1').getContext('2d');
   var chart2= document.getElementById('myChart1');
-
+ //Below code prevents to destroy old graph, otherwise when choose  teams from dropbox, graph is not overwrited and shows every team data.
   if(window.doughnutaway != undefined){
     window.doughnutaway.destroy();
   }
@@ -184,9 +181,6 @@ function changeDataByTeam(){
     }
     
   });
-    
-    
-
  }
 
 
