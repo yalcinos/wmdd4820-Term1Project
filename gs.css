@@ -284,10 +284,13 @@ p .gs-old-logo{
   /*Media Quaries for small device*/
   @media screen and (max-width: 540px) {
     .header__title{
-      font-size: 2.5em;
+      font-size: 2em;
     }
     .nav{
       width: 100%;
+    }
+    .header__logo{
+      height: 40px;
     }
     .nav__item a{
       font-size: 8px;
@@ -306,7 +309,17 @@ p .gs-old-logo{
     }
     .grid-items{
       grid-column-start: 1;
+      width: 390px !important;
     }
+    canvas{
+
+      width:380px !important;
+      height:200px !important;
+      margin-left: auto;
+      margin-right: auto;
+    
+    }
+    
   }
 
   /* Media quaries for tablet pc and pc */
@@ -329,6 +342,13 @@ p .gs-old-logo{
       .header__title{
         font-size: 2.5em;
       }
+      #combobox-team{
+        width: 30%;
+      }
+     #video-footer{
+       margin-top: 100px;
+     }
+     
   }  
   /* Specific queries for main page at index.html to give order properties */
   @media screen and (min-width:600px) and(max-width: 800px){
