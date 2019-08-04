@@ -108,7 +108,7 @@ body, html {
   .nav__item {
     box-sizing: border-box;
     display: inline-block;
-    width: 15%;
+    width: 14%;
     text-align: center;
     line-height: 24px;
     padding: 24px;
@@ -356,10 +356,14 @@ p .gs-old-logo{
     .nav__item a{
       font-size: 8px;
       padding: 6px;
+      text-align: center;
+      font-size: 1.3em;
     }
     .nav__item{
-      padding-left: 2px;
-      padding-right: 2px;
+      padding: 1px;
+      display: block;
+      width: 100%;
+      
     }
     .top-news__item{
       font-size: 13px;
